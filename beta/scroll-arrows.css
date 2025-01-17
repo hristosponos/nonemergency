@@ -1,77 +1,54 @@
-.arrow-container {
+/* SCROLL-DOWN ARROWS ANIMATION */
+
+
+.arrow-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
     position: absolute;
-    top: 92vh;
-    right: 50vw;
-    width: 24px;
-    height: 24px;
+    top: 95vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
 }
 
-.arrow-chevron {
-    position: absolute;
-    width: 28px;
-    height: 2px;
-    opacity: 0;
-    transform: scale3d(0.5, 0.5, 0.5);
-    animation: move 3s ease-out infinite;
+.arrow-container svg{
+    width: 3rem;
 }
 
-    .arrow-chevron:first-child {
-        animation: move 3s ease-out 1s infinite;
-    }
+.arrow-container span{
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: white;
+}
 
-    .arrow-chevron:nth-child(2) {
-        animation: move 3s ease-out 2s infinite;
-    }
+#darker-arrow{
+    animation: darker-arrow-ani 0.7s ease-in alternate infinite;
+    padding-bottom: 5%;
+}
 
-    .arrow-chevron:before,
-    .arrow-chevron:after {
-        content: ' ';
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 51%;
-        background: #fff;
-    }
+#lighter-arrow{
+    animation: lighter-arrow-ani 0.7s ease-in alternate infinite;
+    animation-delay: 450ms;
+}
 
-    .arrow-chevron:before {
-        left: 0;
-        transform: skew(0deg, 30deg);
-    }
-
-    .arrow-chevron:after {
-        right: 0;
-        width: 50%;
-        transform: skew(0deg, -30deg);
-    }
-
-@keyframes move {
-    25% {
-        opacity: 1;
-    }
-
-    33% {
-        opacity: 1;
-        transform: translateY(30px);
-    }
-
-    67% {
-        opacity: 1;
-        transform: translateY(40px);
+@keyframes darker-arrow-ani {
+    0% {
+        opacity: 0.2;
     }
 
     100% {
-        opacity: 0;
-        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+        opacity: 0.5;
     }
 }
 
-.text {
-    display: block;
-    margin-top: 60px;
-    margin-left: -30px;
-    font-size: 12px;
-    color: white;
-    text-transform: uppercase;
-    white-space: nowrap;
-    opacity: 1;
+@keyframes lighter-arrow-ani {
+    0% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 0.95;
+    }
 }
