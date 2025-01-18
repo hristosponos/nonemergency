@@ -6,32 +6,22 @@
     margin: 0;
     padding: 0;
     font-family: "Tinos", serif;
+    font-weight: 300;
 }
 
+/* GENERAL STYLES */
 
-/* HERO SECTION */
-
-.hero {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center;
+section, .grid{
     width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden; 
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
 }
 
-
-.hero > video{
-    position: absolute;
-    width: 100%;
-}
-
-#hero-heading {
-    width: 30vw; 
-    opacity: 0.4;
-    z-index: 1;
+.wrapper{
+    max-width: 1440px;
+    margin: 64px auto 0 auto;
+    box-sizing: border-box;
 }
 
 .button-container{
@@ -48,12 +38,7 @@
     border: 1px solid;
 }
 
-#hero-shop-now:hover{
-    transition: 0.1s;
-    border: 2px solid;
-}
-
-#hero-shop-now {
+button{
     background: none;
     padding: 12px 24px;
     font-size: 1rem;
@@ -62,9 +47,53 @@
     border: 0;
 }
 
+
+button:hover{
+    transition: 0.1s;
+    border: 2px solid;
+}
+
+/* -- FONT STYLES */
+
+h1 { font-size: 3.8rem; grid-column: span 10; font-weight: 800; }
+h2 { font-size: 3rem; grid-column: span 8; font-weight: 700; }
+h3 { font-size: 2.43rem; grid-column: span 8; }
+h4 { font-size: 1.96rem; grid-column: span 8; }
+h5 { font-size: 1.57rem; grid-column: span 6; }
+h6 { font-size: 1.7rem;  grid-column: span 6; }
+p { font-size: 1rem;  grid-column: span 6; }
+.small-text { font-size: .75rem; grid-column: span 4; }
+.bold{ font-weight: 600; }
+
+/* HERO SECTION */
+
+.hero {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; 
+}
+
+
+.hero > video{
+    position: absolute;
+    width: 100%;
+}
+
+#hero-heading {
+    width: 30vw;  /* MAKE RESPONSIVE USING GRID ??? */
+    opacity: 0.4;
+    z-index: 1;
+}
+
+
+
 @keyframes pulse {
     0% {
-        opacity: 0.45;
+        opacity: 0.4;
     }
 
     100% {
@@ -74,3 +103,23 @@
 
 
 /* OUR PRODUCTS SECTION */
+
+.product-showcase{
+    display: flex;
+    grid-column: span 12;
+    width: 100%;
+    gap: 20px;
+}
+
+.product{
+    width: 100%; 
+}
+
+
+.product-showcase img{
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    margin-bottom: 16px;
+}
+
+/* POINTER TO PRODUCT AND UNAVALIABLE OTHERS*/

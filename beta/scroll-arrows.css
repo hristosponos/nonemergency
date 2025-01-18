@@ -30,7 +30,7 @@
 
 #lighter-arrow{
     animation: lighter-arrow-ani 0.7s ease-in alternate infinite;
-    animation-delay: 450ms;
+    animation-delay: 425ms;
 }
 
 @keyframes darker-arrow-ani {
